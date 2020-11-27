@@ -1,6 +1,7 @@
 import React ,{useState} from 'react';
 import {connect} from 'react-redux'
-import addDetail from '../../redux/actions/addDetail.action';
+import startAddDetail from '../../redux/actions/addDetail.action';
+import {startSetDetail} from '../../redux/actions/addDetail.action';
 
 const Details = (props) => {
     const [detail , setDetail] = useState(
@@ -22,10 +23,15 @@ const Details = (props) => {
         e.preventDefault()
         // console.log('surname:',detail.surname)
         // console.log('name:',detail.name)
-        props.dispatch(addDetail({
-            surname:detail.surname,
-            name:detail.name
+        props.dispatch(startAddDetail({
+            surnameFromPage:detail.surname,
+            nameFromPage:detail.name
           }))
+        // props.dispatch(startSetDetail({
+        //     surnameFromPage:detail.surname,
+        //     nameFromPage:detail.name
+        //   }))
+        
     }
 
     

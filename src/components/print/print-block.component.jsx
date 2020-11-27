@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 const  PrintBlock = ({storeSurname , storeName}) => {
-    console.log(storeName)
+    // console.log(storeName)
     return (
         <div className="card shadow-sm ml-5">
         <div className = 'card-body'>

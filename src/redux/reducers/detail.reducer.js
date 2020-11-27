@@ -14,6 +14,11 @@ const detailReducer = (state = INIT_STATE , action) =>{
 
 
             }
+        case 'SET_DETAILS':
+            return {
+                surname:action.detail.surname,
+                name:action.detail.name
+            }
         default:
             return state    
     }
