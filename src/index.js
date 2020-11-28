@@ -49,7 +49,7 @@ const renderApp = () => {
       if(history.location.pathname === '/'){
           history.push('/print')
         }
-        console.log('User is logged in as: ',user.displayName)
+        // console.log('User is logged in as: ',user.displayName)
       }else{
       store.dispatch(logout())
         renderApp()
