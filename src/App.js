@@ -6,6 +6,7 @@ import {Router ,Route } from 'react-router-dom';
 import main from './components/main/main.component'
 import Print from './components/print/print.component'
 import PrivateRoute from './PrivateRoute'
+import PublicRoute from './PublicRoute'
 
 export const history = createBrowserHistory();
 
@@ -24,7 +25,7 @@ const App =({store})=> {
         <Header/>
           <div className="App">
             <header className="App-header">
-            <Route path='/' exact component={main}/>
+            <PublicRoute path='/' exact component={main}/>
             <PrivateRoute path='/print'  component={Print}/>
             </header>
           </div>
