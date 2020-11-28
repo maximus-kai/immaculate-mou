@@ -14,9 +14,9 @@ const Main = () => {
                         <SideBar/>
                     </div>
                 </div>  
-            <Link to='/print' className='btn btn-dark ml-5'>
+            {/* <Link to='/print' className='btn btn-dark ml-5'>
                     Go to Print Page
-            </Link>
+            </Link> */}
         </div>
     )
 }

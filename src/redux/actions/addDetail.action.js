@@ -25,9 +25,9 @@ export const setDetail = ({surname = '' , name = ''}={}) =>(
 
 
 export const startSetDetail = (regData = {}) => {
-    return (dispatch)=>{ 
+    return (dispatch , getState)=>{ 
         // 
-        database.ref().once('value')
+        database.ref(`Users/${getState().userId.userId}/detail`).once('value')
         // 
         .then((snapshot)=>{
             // 
@@ -53,12 +53,13 @@ export const startSetDetail = (regData = {}) => {
 
 
 export const startAddDetail = (regData = {}) => {
-    return (dispatch)=>{
+    return (dispatch , getState)=>{
+        const uid = getState().userId.userId
         const {nameFromPage='default-Name' , surnameFromPage="default-surname"} = regData;
         // 
         const dataToFire = {nameToFire:nameFromPage , surnameToFire:surnameFromPage}
         // 
-        database.ref().push(dataToFire)
+        database.ref(`Users/${uid}/detail`).push(dataToFire)
         .then(()=>{
             dispatch(addDetail(
                 {
