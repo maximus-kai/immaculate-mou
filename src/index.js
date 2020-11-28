@@ -7,6 +7,8 @@ import {firebase} from './firebase/firebase';
 import {startSetDetail} from './redux/actions/addDetail.action';
 import configStore from './redux/store/store.store'
 import { logout, logUserId } from './firebase/actions/authAction';
+import ReactPDF, { PDFViewer } from '@react-pdf/renderer';
+import { MyDocument } from './components/print/print-pdf.component';
 
 // import {createBrowserHistory} from 'history'
 
@@ -28,6 +30,10 @@ const renderApp = () => {
       <App store={store}/>
     </React.StrictMode>,
     document.getElementById('root'))
+
+// ReactDOM.render(<PDFViewer><MyDocument/></PDFViewer>, document.getElementById('root'));
+// ReactPDF.render(<MyDocument />, `${__dirname}/example.pdf`);
+
     // 
     hasRendered = true
     // 

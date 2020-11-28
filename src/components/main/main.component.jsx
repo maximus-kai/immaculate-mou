@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import SignIn from '../signin/sign-in.component'
 import SideBar from '../sideBar/side-bar.component'
 const Main = () => {

@@ -1,9 +1,11 @@
 import React  from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import PrintBlock from './print-block.component';
 import Details from '../details/details.component'
 import {connect} from 'react-redux'
 import {startLogout} from '../../firebase/actions/authAction'
+import {MyDocument} from './print-pdf.component'
+
 
 
 const Print =(props)=> {
