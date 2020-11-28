@@ -1,7 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-const  PrintBlock = ({storeSurname , storeName}) => {
+const  PrintBlock = ({storeSurname , storeName , UserId}) => {
+    console.log(UserId)
     // console.log(storeName)
     return (
         <div className="card shadow-sm ml-5">
@@ -37,7 +38,8 @@ const  PrintBlock = ({storeSurname , storeName}) => {
 const mapStateToProps = (state) => (
     {
         storeSurname:state.detail.surname,
-        storeName:state.detail.name
+        storeName:state.detail.name,
+        UserId:state.userId
     }
 );
 export default connect(mapStateToProps)(PrintBlock)

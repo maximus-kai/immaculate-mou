@@ -1,5 +1,3 @@
-const { Switch } = require("react-router-dom")
-
 const INIT_STATE = {
     surname:'',
     name:''

@@ -37,7 +37,7 @@ export const startSetDetail = (regData = {}) => {
                     ...childSnapshot.val()
                 })
             })
-                console.log('what we get from Firebase:',dataFromFire)
+                // console.log('what we get from Firebase:',dataFromFire)
                 const firstDataToFire = dataFromFire[dataFromFire.length-1]
                 const {nameToFire  , surnameToFire} = firstDataToFire
                 // console.log('first names and surname[0] to fire of the array',nameToFire , surnameToFire)

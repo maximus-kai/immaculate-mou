@@ -1,38 +1,42 @@
 import './App.css';
 import Header from './components/header/header.component'
-import configStore from './redux/store/store.store'
 import {Provider} from 'react-redux'
-import {BrowserRouter ,Route } from 'react-router-dom';
+import {createBrowserHistory} from 'history'
+import {Router ,Route } from 'react-router-dom';
 import main from './components/main/main.component'
 import Print from './components/print/print.component'
-import './firebase/firebase';
-import {startSetDetail} from './redux/actions/addDetail.action';
+import PrivateRoute from './PrivateRoute'
+
+export const history = createBrowserHistory();
 
 
 
-const store = configStore;
 
-store.dispatch(startSetDetail())
 // store.dispatch(addDetail({
 //   surname:"Dairo dispatched",
 //   name:'maximus dispatched'
 // }))
 // console.log(store.getState())
-const App =()=> {
- 
+const App =({store})=> {
   return (
     <Provider store = {store}>
-      <BrowserRouter>
-      <Header/>
-        <div className="App">
-          <header className="App-header">
-          <Route path='/' exact component={main}/>
-          <Route path='/print'  component={Print}/>
-          </header>
-        </div>
-      </BrowserRouter>
-    </Provider>
-  );
-}
+        <Router history = {history}>
+        <Header/>
+          <div className="App">
+            <header className="App-header">
+            <Route path='/' exact component={main}/>
+            <PrivateRoute path='/print'  component={Print}/>
+            </header>
+          </div>
+        </Router>
+      </Provider>
+    );
+  }
+  
+                  // return (
+                    //   <h1>loading...</h1>
+                    // ) 
+
+
 
 export default App;

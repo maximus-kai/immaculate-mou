@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import {startLogin} from '../../firebase/actions/authAction'
 // import {signInWithGoogle} from '../../../firebase/firebase.utils'
 
 class SignIn extends Component {
@@ -10,7 +12,7 @@ class SignIn extends Component {
              password:''
         }
     }
-    
+
 handleSubmit = (e) => {
     e.preventDefault();
     this.setState(
@@ -20,7 +22,15 @@ handleSubmit = (e) => {
         }
     );
     console.log(this.state)
+    console.log(this.props)
 }
+
+
+signInWithGoogle = (e) => {
+    e.preventDefault();
+    this.props.startLogin()
+}
+
 handleChange = (e) =>{
     const {name ,value} = e.target;
     this.setState(
@@ -85,7 +95,7 @@ handleChange = (e) =>{
                      Sign in
                      </button>
                     <button
-                    // onClick={signInWithGoogle}
+                    onClick={this.signInWithGoogle}
                      className="btn btn-success ml-2">
                      Sign in with google
                      </button>
@@ -95,4 +105,7 @@ handleChange = (e) =>{
     }
 }
 
-export default SignIn
+const mapDispatchToProps=(dispatch)=>({
+    startLogin: ()=>dispatch(startLogin())
+});
+export default connect(undefined ,mapDispatchToProps)(SignIn)
